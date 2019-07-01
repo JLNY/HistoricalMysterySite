@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row featurestory" *ngFor="let featurestory of featurestories">
+        <div class="col-sm-9">
+            <span class="tag">{{featurestory.tag}}</span>
+            <h2 class="title">{{featurestory.title}}</h2>
+            <div class="abstract">{{featurestory.abstract}}</div>
+            <div class="author">{{featurestory.author}}</div>
+            <time class="date">{{featurestory.date | date:'mediumDate'}}</time>
+            <span class="readduration">{{featurestory.readduration}}</span>
+        </div>
+        <div class="col-sm">
+            <a href="/" class="featurestory-preview-img" [style.background]="'url(' + featurestory.previewimg +')'">
+                <!-- <img src="https://cdn-images-1.medium.com/max/800/0*syfFJWLOzLoNRUbF."> -->
+            </a>
+        </div>
+    </div>
+</div>

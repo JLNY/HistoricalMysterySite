@@ -1,0 +1,43 @@
+.popularStories-top {
+    font-size: 18px;
+    padding-bottom: 10px;
+    border-bottom-style: solid;
+    margin-bottom: 10px;
+}
+
+.popularStories-content {
+    display: block;
+}
+
+.popularStories-story {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.popularStories-number {
+    display: block;
+    font-size: 34px;
+    color: rgba(0, 0, 0, 0.15);
+    width: 50px;
+    text-align: center;
+}
+
+.popularStories-info {
+    display: block;
+    width: 200px;
+}
+
+.popularStories-title {
+    font-size: 18px;
+}
+
+.popularStories-author {
+    font-size: 14px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.popularStories-time {
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.54)
+}
