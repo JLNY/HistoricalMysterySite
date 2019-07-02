@@ -1,10 +1,17 @@
 import {Injectable} from '@angular/core';
 import { IArticle } from './article';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class ArticleService{
-    getHeroStories(){
-      return Articles.slice(0,5);
+    getHeroStories(): IArticle[]{
+      return Articles.sort(function(a,b){
+        return a.articleclapnum >b.articleclapnum?-1:a.articleclapnum <b.articleclapnum?1:0
+       }).slice(0,5);
+    }
+
+    getStory(articleid:number): IArticle{
+      return Articles.find(x => x.articleid == articleid );
     }
 
     getSingleArticle(): IArticle{
@@ -36,7 +43,8 @@ const Articles : IArticle[] = [
             paragraphnum: 3,
             paragraphcontent: '<p name="7220" id="7220" class="graf graf--p graf-after--p">Delivering the news effectively, though, is a delicate art.“It’s important to remember that this person has emotions and feelings attached to the information they’re receiving,” says industrial-organizational psychologist <a href="http://www.amycooperhakim.com/" data-href="http://www.amycooperhakim.com/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Amy Cooper Hakim</a>, author of <em class="markup--em markup--p-em">Working with Difficult People </em>and founder of the Cooper Strategic Group.</p>'
           }
-        ]
+        ],
+        articleclapnum: 50,
       },
       {
         articleid: 2,
@@ -49,7 +57,16 @@ const Articles : IArticle[] = [
         articledate: new Date( "2019-06-28"),
         articlereadduration: 5,
         articlebody:[
-        ]
+          {
+            paragraphnum: 1,
+            paragraphcontent: '<img width="100%" class="progressiveMedia-image js-progressiveMedia-image" data-src="https://cdn-images-1.medium.com/max/1600/1*vH7cHbMLPjxJQBMZAdlEdQ.jpeg" src="https://cdn-images-1.medium.com/max/1600/1*vH7cHbMLPjxJQBMZAdlEdQ.jpeg">'
+          },
+          {
+            paragraphnum: 2,
+            paragraphcontent: '<p name="8841" id="8841" class="graf graf--p graf-after--figure">Óscar Alberto Martínez Ramírez and his 23-month-old daughter, Valeria, drowned to death this week while crossing the Rio Grande river in an attempt to reach the U.S. shore and ask for asylum. After they were discovered on Monday, a photograph of their lifeless bodies went viral. In the photo, Óscar and Valeria appear facedown in the turbid water; Valeria’s little arm is clung around her father’s neck and both of their legs are floating out behind them. Their unsettled stillness calls to mind the power of an image to impact a policy debate, much like how in 2015 the photograph of the drowned Syrian boy, <a href="https://www.washingtonpost.com/world/2019/06/26/photo-drowned-migrant-child-recalls-an-image-that-shocked-world/?utm_term=.bf9742aa1e02" data-href="https://www.washingtonpost.com/world/2019/06/26/photo-drowned-migrant-child-recalls-an-image-that-shocked-world/?utm_term=.bf9742aa1e02" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Alan Kurdi</a> convinced a number of European Union nations to rethink their refugee policies (though ultimately the EU foisted more responsibility onto Turkey). Also like Kurdi’s photograph, the image of Óscar and Valeria brings home the impact of the moral failings of our immigration policy. But if we want to avoid such terrible deaths in the future, a few days of outrage isn’t enough.</p>'
+          }
+        ],
+        articleclapnum: 49,
       },
       {
         articleid: 3,
@@ -62,11 +79,11 @@ const Articles : IArticle[] = [
         articledate: new Date("2019-06-25"),
         articlereadduration: 5,
         articlebody:[
-
-        ]
+        ],
+        articleclapnum: 48,
       },
       {
-        articleid: 3,
+        articleid: 4,
         articletag: "HealthyFood",
         articletitle: "Inside the Race to Build the Netflix of Food",
         articlepreviewimg: "https://cdn-images-1.medium.com/focal/100/100/47/66/1*a5bn0Dx02hptAfcd0hWh5Q.jpeg",
@@ -76,11 +93,11 @@ const Articles : IArticle[] = [
         articledate: new Date("2019-06-26"),
         articlereadduration: 9,
         articlebody: [
-
-        ]
+        ],
+        articleclapnum: 47,
       },
       {
-        articleid: 4,
+        articleid: 5,
         articletag: "Millennial",
         articletitle: "Are Millennials Really Growing Horns From Using Their Phones",
         articlepreviewimg: "https://cdn-images-1.medium.com/fit/c/504/222/1*EzqSge-2VRH7tq-KimYNwA.jpeg",
@@ -89,6 +106,7 @@ const Articles : IArticle[] = [
         articleauthor: "Joyhn Hawks",
         articledate: new Date("2019-06-24"),
         articlereadduration: 6,
-        articlebody:[]
+        articlebody:[],
+        articleclapnum: 46,
       }
 ]

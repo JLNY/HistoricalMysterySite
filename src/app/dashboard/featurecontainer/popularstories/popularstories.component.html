@@ -4,11 +4,11 @@
 <div class="popularStories-content">
     <div class="popularStories-story" *ngFor="let popularstory of popularStories; let i = index">
         <div class="popularStories-number">0{{i+1}}</div>
-        <div class="popularStories-info">
-            <h2 class="popularStories-title">{{popularstory.title}}</h2>
-            <div class="popularStories-author">{{popularstory.author}}</div>
-            <time class="popularStories-date">{{popularstory.date | date:'mediumDate'}}</time>
-            <span class="popularStories-readduration">{{popularstory.readduration}}</span>
+        <div [routerLink]="['/article', i+1]" class="popularStories-info">
+            <h2 class="popularStories-title">{{popularstory.articletitle}}</h2>
+            <div class="popularStories-author">{{popularstory.articleauthor}}</div>
+            <time class="popularStories-date">{{popularstory.articledate | date:'mediumDate'}}</time>
+            <span class="popularStories-readduration">{{popularstory.articlereadduration}}</span>
         </div>
     </div>
 </div>

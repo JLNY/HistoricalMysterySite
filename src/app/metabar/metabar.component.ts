@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../user/auth.service';
 
 @Component({
   selector: 'hm-metabar',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MetabarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }

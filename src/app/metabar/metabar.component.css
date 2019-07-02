@@ -22,7 +22,7 @@
 }
 
 .metabar-search {
-    padding-right: 20px;
+    padding-right: 10px;
 }
 
 .metabar-search-input {
@@ -34,8 +34,16 @@
     border: none;
 }
 
+.metabar-login {
+    padding-left: 10px;
+}
+
 .metabar-login>a {
     position: relative;
     bottom: 50%;
     cursor: pointer;
+}
+
+.metabar-newarticle {
+    padding: 0 10px 0 10px;
 }

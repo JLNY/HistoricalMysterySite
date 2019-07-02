@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ArticleService } from '../articleservice/article.service';
+
 
 @Component({
   selector: 'hm-articleviewer',
@@ -6,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./articleviewer.component.css']
 })
 export class ArticleviewerComponent implements OnInit {
+  articleid:number
 
-  constructor() { }
+  constructor(private articleService: ArticleService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.articleid = this.route.snapshot.params['articleid'];
   }
 
 }

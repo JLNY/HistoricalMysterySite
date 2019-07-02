@@ -13,7 +13,7 @@
             {{article.articlereadduration}}
         </div>
     </div>
-    <img class="article-content-img" src={{article.articlefeatureimg}}>
+    <!-- <img class="article-content-img" src={{article.articlefeatureimg}}> -->
     <div *ngFor='let content of article.articlebody'>
         <div class="article-content-paragraph" [innerHTML]="content.paragraphcontent"></div>
     </div>

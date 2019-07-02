@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from 'src/app/articleservice/article.service';
+import { IArticle } from 'src/app/articleservice/article';
 
 @Component({
   selector: 'hm-popularstories',
@@ -7,11 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopularstoriesComponent implements OnInit {
 
-  popularStories = PopularStories;
+  popularStories: IArticle[];
 
-  constructor() { }
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
+    this.popularStories = this.articleService.getHeroStories();
   }
 
 }

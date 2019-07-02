@@ -8,7 +8,8 @@ export interface IArticle{
     articleauthor: string,
     articledate: Date,
     articlereadduration: number,
-    articlebody: IParagraph[]
+    articlebody: IParagraph[],
+    articleclapnum: number
 }
 
 export interface IParagraph {

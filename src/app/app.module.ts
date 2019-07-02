@@ -15,6 +15,12 @@ import { SidesharewidgetComponent } from './articleviewer/sidesharewidget/sidesh
 import { ArticlecontentviewerComponent } from './articleviewer/articlecontentviewer/articlecontentviewer.component';
 
 import { ArticleService } from './articleservice/article.service';
+import { AuthService } from './user/auth.service';
+import { ArticlecomposeComponent } from './articlecompose/articlecompose.component';
+import { Error404Component } from './error/error404/error404.component';
+
+import { ArticleViewerRouteActivator } from './articleviewer/articleviewer-route-activator.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,13 +33,27 @@ import { ArticleService } from './articleservice/article.service';
     PopularstoriesComponent,
     ArticleviewerComponent,
     SidesharewidgetComponent,
-    ArticlecontentviewerComponent
+    ArticlecontentviewerComponent,
+    ArticlecomposeComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ ArticleService ],
+  providers: [ 
+    ArticleService, 
+    ArticleViewerRouteActivator,
+    {provide: 'canDeactivateComposeArticle', useValue: checkDirtyState },
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function checkDirtyState(component:ArticlecomposeComponent){
+  if (component.isDirty){
+    return window.confirm('You have not saved this article, do you really want to leave?')
+  }
+  return true
+}
