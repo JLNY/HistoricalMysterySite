@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
+import { ArticleService } from 'src/app/articleservice/article.service';
+import { IArticle } from 'src/app/articleservice/article';
 
 @Component({
   selector: 'hm-articlecontentviewer',
@@ -8,11 +10,12 @@ import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
 })
 export class ArticlecontentviewerComponent implements OnInit {
 
-  article = Article;
+  article: IArticle;
   
-  constructor() { }
+  constructor(private articleservice: ArticleService) { }
 
   ngOnInit() {
+    this.article = this.articleservice.getSingleArticle();
   }
 
 }

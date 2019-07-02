@@ -14,6 +14,7 @@ import { ArticleviewerComponent } from './articleviewer/articleviewer.component'
 import { SidesharewidgetComponent } from './articleviewer/sidesharewidget/sidesharewidget.component';
 import { ArticlecontentviewerComponent } from './articleviewer/articlecontentviewer/articlecontentviewer.component';
 
+import { ArticleService } from './articleservice/article.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,7 @@ import { ArticlecontentviewerComponent } from './articleviewer/articlecontentvie
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ ArticleService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
