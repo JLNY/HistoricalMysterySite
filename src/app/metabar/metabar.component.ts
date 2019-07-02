@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'hm-metabar',
+  selector: 'app-metabar',
   templateUrl: './metabar.component.html',
   styleUrls: ['./metabar.component.css']
 })

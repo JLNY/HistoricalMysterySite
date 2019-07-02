@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'hm-articleviewer',
+  selector: 'app-articleviewer',
   templateUrl: './articleviewer.component.html',
   styleUrls: ['./articleviewer.component.css']
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'hm-sidesharewidget',
+  selector: 'app-sidesharewidget',
   templateUrl: './sidesharewidget.component.html',
   styleUrls: ['./sidesharewidget.component.css']
 })

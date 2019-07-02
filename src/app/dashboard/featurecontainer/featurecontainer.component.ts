@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'hm-featurecontainer',
+  selector: 'app-featurecontainer',
   templateUrl: './featurecontainer.component.html',
   styleUrls: ['./featurecontainer.component.css']
 })
