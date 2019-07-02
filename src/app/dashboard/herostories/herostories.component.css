@@ -1,0 +1,134 @@
+.herostories-row {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 400px;
+    border-top-color: rgba(0, 0, 0, 0.54);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-bottom-color: rgba(0, 0, 0, 0.54);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.leftherostory-card {
+    width: 100%;
+    height: 100%;
+}
+
+.leftherostory-title {
+    max-height: 84px;
+    font-size: 24px;
+}
+
+.leftherostory-abstract {
+    max-height: 60px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.leftherostory-date {
+    line-height: 1.4;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.leftherostory-readduration {
+    line-height: 1.4;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.leftherostory-preview-img {
+    background-position: 50% 50% !important;
+    background-size: cover!important;
+    background-origin: border-box!important;
+    width: 100%!important;
+    height: 40%!important;
+    display: block!important;
+    visibility: visible;
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+}
+
+.centerherostory-card {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.centerherostory-title {
+    max-height: 45px;
+    /* height: 60px; */
+    overflow: hidden;
+    font-size: 18px;
+}
+
+.centerherostory-author {
+    font-size: 16px;
+}
+
+.centerherostory-date {
+    line-height: 1.4;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.centerherostory-readduration {
+    line-height: 1.4;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.centerherostory-preview-img {
+    background-position: 50% 50% !important;
+    background-size: cover!important;
+    background-origin: border-box!important;
+    width: 100%!important;
+    height: 100%!important;
+    display: block!important;
+    visibility: visible;
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+}
+
+.rightherostory-card {
+    width: 100%;
+    height: 100%;
+}
+
+.rightherostory-title {
+    max-height: 84px;
+    font-size: 24px;
+}
+
+.rightherostory-abstract {
+    max-height: 60px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.rightherostory-date {
+    line-height: 1.4;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.rightherostory-readduration {
+    line-height: 1.4;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.rightherostory-preview-img {
+    background-position: 50% 50% !important;
+    background-size: cover!important;
+    background-origin: border-box!important;
+    width: 100%!important;
+    height: 40%!important;
+    display: block!important;
+    visibility: visible;
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+}
