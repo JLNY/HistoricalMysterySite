@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, EventEmitter} from '@angular/core';
 import { IArticle } from './article';
 import { Subject } from 'rxjs';
 
@@ -16,6 +16,19 @@ export class ArticleService{
 
     getSingleArticle(): IArticle{
       return Articles[0];
+    }
+
+    searchArticle(searchTerm: string) {
+      var term = searchTerm.toLocaleLowerCase();
+      var results = Articles.filter( 
+         article => article.articletitle.toLocaleLowerCase().indexOf(term) > -1
+        );
+      var emmiter = new EventEmitter(true);
+      setTimeout(()=>{
+        emmiter.emit(results);
+      }, 100);
+      return emmiter;
+
     }
 }
 

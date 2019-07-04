@@ -20,6 +20,13 @@ import { ArticlecomposeComponent } from './articlecompose/articlecompose.compone
 import { Error404Component } from './error/error404/error404.component';
 
 import { ArticleViewerRouteActivator } from './articleviewer/articleviewer-route-activator.service'
+import { FormsModule } from '@angular/forms';
+import { SearchmodalComponent } from './searchmodal/searchmodal.component';
+import { JQ_TOKEN } from './jqueryservice/jquery.service';
+import { ModaltriggerDirective } from './modaltrigger/modaltrigger.directive';
+import { ArticleclapComponent } from './articleclap/articleclap.component';
+
+let jQuery = window['$']
 
 @NgModule({
   declarations: [
@@ -35,16 +42,21 @@ import { ArticleViewerRouteActivator } from './articleviewer/articleviewer-route
     SidesharewidgetComponent,
     ArticlecontentviewerComponent,
     ArticlecomposeComponent,
-    Error404Component
+    Error404Component,
+    SearchmodalComponent,
+    ModaltriggerDirective,
+    ArticleclapComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [ 
     ArticleService, 
     ArticleViewerRouteActivator,
     {provide: 'canDeactivateComposeArticle', useValue: checkDirtyState },
+    {provide: JQ_TOKEN, useValue: jQuery},
     AuthService
   ],
   bootstrap: [AppComponent]

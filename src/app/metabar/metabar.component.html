@@ -10,17 +10,26 @@
         <div class="col-sm-6 d-flex flex-row-reverse metabar-right align-items-center">
             <div class="metabar-login">
                 <a *ngIf="!authService.isAuthenticated()" [routerLink]="['user/login']">Login</a>
-                <a *ngIf="authService.isAuthenticated()" [routerLink]="['user/profile']">Welcome {{authService.currentUser.firstName}}</a>
+                <a *ngIf="authService.isAuthenticated()" [routerLink]="['user/profile']">Welcome
+                    {{authService.currentUser.firstName}}</a>
             </div>
             <div class="metabar-newarticle d-flex">
                 <a [routerLink]="['/article/new']">New</a>
             </div>
-            <form id="searchForm" class="metabar-search d-flex">
+            <form id="searchForm" (ngSubmit)="searchArticles(searchTerm)" class="metabar-search d-flex">
                 <div class="form-group metabar-search-input">
-                    <input type="text" class="form-control metabar-search-input-field" placeholder="Search Sessions">
+                    <input [(ngModel)]="searchTerm" name="searchTerm" type="text" class="form-control metabar-search-input-field" placeholder="Search Sessions">
                 </div>
-                <button class="metabar-search-button">Search</button>
+                <button class="metabar-search-button" hmModaltrigger="searchResults">Search</button>
             </form>
         </div>
     </div>
 </div>
+
+<hm-searchmodal closeOnBodyClick="true" elementId="searchResults" title="Matching Articles">
+    <div class="list-group">
+        <a class="list-group-item" *ngFor="let article of foundArticles" [routerLink]="['/article', article.articleid]">
+            {{article.articletitle}}
+        </a>
+    </div>
+</hm-searchmodal>

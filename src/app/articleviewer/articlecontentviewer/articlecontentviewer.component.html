@@ -17,4 +17,9 @@
     <div *ngFor='let content of article.articlebody'>
         <div class="article-content-paragraph" [innerHTML]="content.paragraphcontent"></div>
     </div>
+    <!-- <div class="article-readeraction">
+        <div class="article-claps">
+            <articleclap (clap)="toggleClap(article.articleid)" [count]="article.articleclapnum" [voted]="userHasVoted(article.articelid)"></articleclap>
+        </div>
+    </div> -->
 </div>

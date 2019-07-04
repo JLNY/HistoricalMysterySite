@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { ArticleService } from '../articleservice/article.service';
 
 
@@ -14,7 +14,10 @@ export class ArticleviewerComponent implements OnInit {
   constructor(private articleService: ArticleService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.articleid = this.route.snapshot.params['articleid'];
+    this.route.params.forEach((params: Params)=>{
+      this.articleid =params['articleid']
+    })
+    //this.articleid = this.route.snapshot.params['articleid'];
   }
 
 }
