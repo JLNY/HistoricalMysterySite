@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(formValues){
-    this.authService.loginUser(formValues.username, formValues.password)
+    this.authService.loginUser(formValues.userName, formValues.password)
     this.router.navigate(['dashboard'])
   }
 

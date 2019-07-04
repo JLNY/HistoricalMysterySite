@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'hm-articleclap',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleclapComponent implements OnInit {
 
+  @Input() count: number;
+  @Input() clapped: boolean;
+  @Output() clap = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onClick(){
+    this.clap.emit({});
+  }
 }

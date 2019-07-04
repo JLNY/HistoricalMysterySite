@@ -16,6 +16,7 @@ import { ArticlecontentviewerComponent } from './articleviewer/articlecontentvie
 
 import { ArticleService } from './articleservice/article.service';
 import { AuthService } from './user/auth.service';
+import { ActivityService } from './articleservice/activity.service';
 import { ArticlecomposeComponent } from './articlecompose/articlecompose.component';
 import { Error404Component } from './error/error404/error404.component';
 
@@ -57,7 +58,8 @@ let jQuery = window['$']
     ArticleViewerRouteActivator,
     {provide: 'canDeactivateComposeArticle', useValue: checkDirtyState },
     {provide: JQ_TOKEN, useValue: jQuery},
-    AuthService
+    AuthService,
+    ActivityService
   ],
   bootstrap: [AppComponent]
 })
