@@ -1,0 +1,49 @@
+.metabar * {
+    max-height: 65px;
+}
+
+.metabar {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(0, 0, 0, 0.54)
+}
+
+.metabar-site-title {
+    position: relative;
+    top: 50%;
+}
+
+.metabar-logo-img {
+    float: left;
+    width: auto;
+    height: inherit;
+}
+
+.metabar-search {
+    padding-right: 10px;
+}
+
+.metabar-search-input {
+    margin-bottom: 0;
+}
+
+.metabar-search-button {
+    background: transparent;
+    border: none;
+}
+
+.metabar-login {
+    padding-left: 10px;
+}
+
+.metabar-login>a {
+    position: relative;
+    bottom: 50%;
+    cursor: pointer;
+}
+
+.metabar-newarticle {
+    padding: 0 10px 0 10px;
+}

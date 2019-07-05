@@ -1,0 +1,53 @@
+.article-tag {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 22px;
+}
+
+.article-title {
+    font-size: 42px;
+}
+
+.article-abstract {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 28px;
+}
+
+.article-info-block {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+.article-author {}
+
+.article-date {
+    display: inline-block;
+}
+
+.article-readduration {
+    display: inline-block;
+}
+
+.article-content-img {
+    max-width: 100%;
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+img.paragraphCapImage {
+    width: 111px;
+    height: 111px;
+    padding: 15px 10px 0px 0px;
+    display: block;
+    float: left;
+}
+
+.article-content-paragraph {
+    padding: 5px;
+    font-size: 21px;
+    line-height: 1.58;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    clear: left;
+}

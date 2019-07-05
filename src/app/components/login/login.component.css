@@ -1,0 +1,12 @@
+.user-login-board {
+    display: block;
+    position: relative;
+    max-width: 740px;
+    margin: 0 auto;
+}
+
+em {
+    float: right;
+    color: red;
+    padding-left: 10px;
+}
