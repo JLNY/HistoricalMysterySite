@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row herostories-row">
+        <div class="col-sm-4">
+            <div [routerLink]="['/article', leftherostory.articleid]" class="leftherostory-card">
+                <div class="leftherostory-preview-img" [style.background]="'url(' + leftherostory.articlepreviewimg +')'"></div>
+                <h2 class="leftherostory-title">{{leftherostory.articletitle}}</h2>
+                <div class="leftherostory-abstract">{{leftherostory.articleabstract}}</div>
+                <div class="leftherostory-author">{{leftherostory.articleauthor}}</div>
+                <time class="leftherostory-date">{{leftherostory.articledate | date:'mediumDate'}}</time>
+                <span> . </span>
+                <span class="leftherostory-readduration">{{leftherostory.articlereadduration}}</span>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="centerherostory-card" *ngFor="let centerherostory of midherostory">
+                <div [routerLink]="['/article', centerherostory.articleid]" class="row centerherostory-row">
+                    <div class="col-sm-9">
+                        <h2 class="centerherostory-title">{{centerherostory.articletitle}}</h2>
+                        <div class="centerherostory-author">{{centerherostory.articleauthor}}</div>
+                        <time class="centerherostory-date">{{centerherostory.articledate | date:'mediumDate'}}</time>
+                        <span> . </span>
+                        <span class="centerherostory-readduration">{{centerherostory.articlereadduration}}</span>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="centerherostory-preview-img" [style.background]="'url(' + centerherostory.articlepreviewimg +')'"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div [routerLink]="['/article', rightherostory.articleid]" class="rightherostory-card">
+                <div class="rightherostory-preview-img" [style.background]="'url(' + rightherostory.articlepreviewimg +')'"></div>
+                <h2 class="rightherostory-title">{{rightherostory.articletitle}}</h2>
+                <div class="rightherostory-abstract">{{rightherostory.articleabstract}}</div>
+                <div class="rightherostory-author">{{rightherostory.articleauthor}}</div>
+                <time class="rightherostory-date">{{rightherostory.articledate | date:'mediumDate'}}</time>
+                <span> . </span>
+                <span class="rightherostory-readduration">{{rightherostory.articlereadduration}}</span>
+            </div>
+        </div>
+    </div>
+</div>
