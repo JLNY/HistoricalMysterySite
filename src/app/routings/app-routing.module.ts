@@ -13,8 +13,8 @@ const routes: Routes = [
   {path: 'article/new', component: ArticlecomposeComponent, canDeactivate: ['canDeactivateComposeArticle']},
   {path: 'article/:articleid', component: ArticleviewerComponent, canActivate: [ArticleViewerRouteActivator]},
   {path: '404', component: Error404Component},
-  {path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  {path: 'user', loadChildren: '../modules/user.module#UserModule'}
+  {path: 'user', loadChildren: '../modules/user.module#UserModule'},
+  {path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
-<div class="clapWidgetContainer pointable" (click)="onClick()">
+<div class="clapWidgetContainer pointable">
     <div class="clapWidget">
-        <div class="clapButton">
+        <div class="clapButton" (click)="onClick()">
             <i *ngIf="clapped" class="fa fa-thumbs-up"></i>
             <i *ngIf="!clapped" class="fa fa-thumbs-o-up"></i>
         </div>

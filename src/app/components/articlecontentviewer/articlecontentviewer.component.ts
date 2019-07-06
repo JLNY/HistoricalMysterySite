@@ -30,8 +30,10 @@ export class ArticlecontentviewerComponent implements OnInit, OnChanges {
   toggleClap(articleid: number) {
     if (this.userHasClapped(articleid)) {
       this.activityService.unClap(articleid, this.auth.currentUser.userName);
+      this.articleservice.getStory(articleid).articleclapnum -= 1;
     } else {
       this.activityService.clap(articleid, this.auth.currentUser.userName);
+      this.articleservice.getStory(articleid).articleclapnum += 1;
     }
   }
 
