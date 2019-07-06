@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
+import { NgChatModule } from 'ng-chat';
 
 import { AppRoutingModule } from '../routings/app-routing.module';
 import { AppComponent } from '../components/app/app.component';
@@ -28,6 +29,7 @@ import { SearchmodalComponent } from '../components/searchmodal/searchmodal.comp
 import { JQ_TOKEN } from '../services/jquery.service';
 import { ModaltriggerDirective } from '../directives/modaltrigger.directive';
 import { ArticleclapComponent } from '../components/articleclap/articleclap.component';
+import { ChatComponent } from '../components/chat/chat.component';
 let jqkey = "$"
 const jQuery = window[jqkey];
 
@@ -48,14 +50,16 @@ const jQuery = window[jqkey];
     Error404Component,
     SearchmodalComponent,
     ModaltriggerDirective,
-    ArticleclapComponent
+    ArticleclapComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     CKEditorModule,
-    JwSocialButtonsModule
+    JwSocialButtonsModule,
+    NgChatModule
   ],
   providers: [
     ArticleService,
