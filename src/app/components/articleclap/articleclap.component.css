@@ -1,0 +1,29 @@
+.clapWidget {
+    display: inline-flex;
+}
+
+.clapWidgetContainer {
+    padding-left: 24px;
+}
+
+.clapButton {
+    display: inline-block;
+    font-size: 250%;
+}
+
+.clapButtion i {
+    color: white;
+}
+
+.badge-inverse {
+    background: white;
+    color: #4e5d6c;
+}
+
+.clapCount {
+    padding-left: 10px;
+    display: inline-block;
+    font-size: 100%;
+    align-self: center;
+    font-weight: bold;
+}

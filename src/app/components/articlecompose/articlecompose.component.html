@@ -1,0 +1,11 @@
+<div class="col-md-10 article-composition-board">
+    <hr>
+    <div class="article-composition">
+        <ckeditor class="editor-board" [disabled]="!auth.isAuthenticated()" [config]="titleEditorModel.editorConfig" [(ngModel)]="titleEditorModel.editorData" [editor]="TitleEditor"></ckeditor>
+        <ckeditor class="editor-board" [disabled]="!auth.isAuthenticated()" [config]="bodyEditorModel.editorConfig" [(ngModel)]="bodyEditorModel.editorData" [editor]="BodyEditor"></ckeditor>
+        <br/>
+        <br/>
+        <button type="submit" class="btn btn-primary" (click)="saveArticle()">Save</button>
+        <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
+    </div>
+</div>

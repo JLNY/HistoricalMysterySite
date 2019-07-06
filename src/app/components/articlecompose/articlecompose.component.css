@@ -1,0 +1,11 @@
+.article-composition-board {
+    display: block;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: grey;
+}
+
+.ck-editor__editable_inline {
+    min-width: 400px;
+}

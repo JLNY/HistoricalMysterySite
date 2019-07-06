@@ -1,0 +1,11 @@
+<div class="clapWidgetContainer pointable">
+    <div class="clapWidget">
+        <div class="clapButton" (click)="onClick()">
+            <i *ngIf="clapped" class="fa fa-thumbs-up"></i>
+            <i *ngIf="!clapped" class="fa fa-thumbs-o-up"></i>
+        </div>
+        <div class="badge badge-inverse clapCount">
+            <div>{{count}}</div>
+        </div>
+    </div>
+</div>
