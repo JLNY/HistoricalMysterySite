@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 
 import { AppRoutingModule } from '../routings/app-routing.module';
 import { AppComponent } from '../components/app/app.component';
@@ -27,7 +28,6 @@ import { SearchmodalComponent } from '../components/searchmodal/searchmodal.comp
 import { JQ_TOKEN } from '../services/jquery.service';
 import { ModaltriggerDirective } from '../directives/modaltrigger.directive';
 import { ArticleclapComponent } from '../components/articleclap/articleclap.component';
-
 let jqkey = "$"
 const jQuery = window[jqkey];
 
@@ -54,7 +54,8 @@ const jQuery = window[jqkey];
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CKEditorModule
+    CKEditorModule,
+    JwSocialButtonsModule
   ],
   providers: [
     ArticleService,
