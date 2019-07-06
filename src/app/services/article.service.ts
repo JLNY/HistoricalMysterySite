@@ -4,23 +4,30 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class ArticleService {
+
+    articles: IArticle[] = Articles.slice(0)
+
     getHeroStories(): IArticle[] {
-      return Articles.sort((a, b) => {
+      return this.articles.sort((a, b) => {
         return a.articleclapnum > b.articleclapnum ? -1 : a.articleclapnum < b.articleclapnum ? 1 : 0;
        }).slice(0, 5);
     }
 
     getStory(articleid: number): IArticle {
-      return Articles.find(x => x.articleid == articleid );
+      return this.articles.find(x => x.articleid == articleid );
     }
 
     getSingleArticle(): IArticle {
-      return Articles[0];
+      return this.articles[0];
+    }
+
+    addArticle(article: IArticle){
+      this.articles.push(article);
     }
 
     searchArticle(searchTerm: string) {
       const term = searchTerm.toLocaleLowerCase();
-      const results = Articles.filter(
+      const results = this.articles.filter(
          article => article.articletitle.toLocaleLowerCase().indexOf(term) > -1
         );
       const emmiter = new EventEmitter(true);

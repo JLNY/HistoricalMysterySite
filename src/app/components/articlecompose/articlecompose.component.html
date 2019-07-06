@@ -1,12 +1,11 @@
-<div class="col-md-8 article-composition-board">
+<div class="col-md-10 article-composition-board">
     <hr>
-    <h1>New Article</h1>
-    <hr>
-    <div class="col-md-6 article-composition">
-        <h3>[Create New Article Form will go here]</h3>
+    <div class="article-composition">
+        <ckeditor class="editor-board" [disabled]="!auth.isAuthenticated()" [config]="titleEditorModel.editorConfig" [(ngModel)]="titleEditorModel.editorData" [editor]="TitleEditor"></ckeditor>
+        <ckeditor class="editor-board" [disabled]="!auth.isAuthenticated()" [config]="bodyEditorModel.editorConfig" [(ngModel)]="bodyEditorModel.editorData" [editor]="BodyEditor"></ckeditor>
         <br/>
         <br/>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary" (click)="saveArticle()">Save</button>
         <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
     </div>
 </div>

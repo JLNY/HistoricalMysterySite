@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppRoutingModule } from '../routings/app-routing.module';
 import { AppComponent } from '../components/app/app.component';
@@ -21,7 +23,6 @@ import { ArticlecomposeComponent } from '../components/articlecompose/articlecom
 import { Error404Component } from '../components/error/error404/error404.component';
 
 import { ArticleViewerRouteActivator } from '../services/articleviewer-route-activator.service';
-import { FormsModule } from '@angular/forms';
 import { SearchmodalComponent } from '../components/searchmodal/searchmodal.component';
 import { JQ_TOKEN } from '../services/jquery.service';
 import { ModaltriggerDirective } from '../directives/modaltrigger.directive';
@@ -52,7 +53,8 @@ const jQuery = window[jqkey];
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CKEditorModule
   ],
   providers: [
     ArticleService,

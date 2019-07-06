@@ -1,11 +1,14 @@
+.clapWidget {
+    display: inline-flex;
+}
+
 .clapWidgetContainer {
     padding-left: 24px;
 }
 
-.clapButtion {
-    margin-left: -7px;
-    margin-top: 1px;
-    cursor: pointer;
+.clapButton {
+    display: inline-block;
+    font-size: 250%;
 }
 
 .clapButtion i {
@@ -18,8 +21,9 @@
 }
 
 .clapCount {
-    margin-left: -11px;
-    margin-top: 1px;
+    padding-left: 10px;
+    display: inline-block;
+    font-size: 100%;
+    align-self: center;
     font-weight: bold;
-    font-size: 14px;
 }
