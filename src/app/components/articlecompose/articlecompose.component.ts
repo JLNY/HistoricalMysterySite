@@ -63,4 +63,8 @@ export class ArticlecomposeComponent implements OnInit {
     this.articleService.addArticle(article);
     this.isDirty = false;
   }
+
+  isLoggedIn(): boolean{
+    return this.auth.isAuthenticated();
+  }
 }
