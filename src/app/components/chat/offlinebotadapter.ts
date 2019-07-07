@@ -95,7 +95,7 @@ export class OfflineBotAdapter extends ChatAdapter implements IChatGroupAdapter 
       {
         fromId: 1,
         toId: 999,
-        message: "Hi there, just type any message bellow to test this Angular module.",
+        message: "Hi there, how can I help?",
         dateSent: new Date()
       }
     ];
@@ -107,7 +107,7 @@ export class OfflineBotAdapter extends ChatAdapter implements IChatGroupAdapter 
     setTimeout(() => {
       let replyMessage = new Message();
 
-      replyMessage.message = "You have typed '" + message.message + "'";
+      replyMessage.message = "Do you mean '" + message.message + "'?";
       replyMessage.dateSent = new Date();
 
       if (isNaN(message.toId)) {

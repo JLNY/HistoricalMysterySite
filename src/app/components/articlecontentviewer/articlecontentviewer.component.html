@@ -18,7 +18,7 @@
         <div class="article-content-paragraph" [innerHTML]="content.paragraphcontent"></div>
     </div>
     <div class="article-readeraction">
-        <div *ngIf="auth.isAuthenticated()" class="article-claps">
+        <div *ngIf="isLoggedIn()" class="article-claps">
             <hm-articleclap (clap)="toggleClap(article.articleid)" [count]="article.articleclapnum" [clapped]="userHasClapped(article.articleid)"></hm-articleclap>
         </div>
     </div>
