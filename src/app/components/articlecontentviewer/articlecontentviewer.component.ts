@@ -41,4 +41,8 @@ export class ArticlecontentviewerComponent implements OnInit, OnChanges {
     return this.activityService.userHasClapped(articleid, this.auth.currentUser.userName);
   }
 
+  isLoggedIn(){
+    return this.auth.isAuthenticated();
+  }
+
 }

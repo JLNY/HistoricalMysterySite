@@ -25,4 +25,8 @@ export class MetabarComponent implements OnInit {
     );
   }
 
+  isLoggedIn(){
+    return this.authService.isAuthenticated();
+  }
+
 }

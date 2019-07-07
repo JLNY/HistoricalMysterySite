@@ -9,8 +9,8 @@
         </div>
         <div class="col-sm-6 d-flex flex-row-reverse metabar-right align-items-center">
             <div class="metabar-login">
-                <a *ngIf="!authService.isAuthenticated()" [routerLink]="['user/login']">Login</a>
-                <a *ngIf="authService.isAuthenticated()" [routerLink]="['user/profile']">Welcome
+                <a *ngIf="!isLoggedIn()" [routerLink]="['user/login']">Login</a>
+                <a *ngIf="isLoggedIn()" [routerLink]="['user/profile']">Welcome
                     {{authService.currentUser.firstName}}</a>
             </div>
             <div class="metabar-newarticle d-flex">

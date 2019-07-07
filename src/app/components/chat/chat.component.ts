@@ -18,4 +18,8 @@ export class ChatComponent implements OnInit {
   ngOnInit() {
   }
 
+  isLoggedIn(): boolean{
+    return this.auth.isAuthenticated();
+  }
+
 }
