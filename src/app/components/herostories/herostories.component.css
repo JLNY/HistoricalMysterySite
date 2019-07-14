@@ -21,9 +21,14 @@
 }
 
 .leftherostory-abstract {
-    max-height: 60px;
     font-size: 16px;
     color: rgba(0, 0, 0, 0.54);
+    display: block;
+}
+
+.leftherostory-author {
+    font-size: 16px;
+    margin-top: 2px;
 }
 
 .leftherostory-date {
@@ -77,6 +82,10 @@
     line-height: 1.4;
     font-size: 15px;
     color: rgba(0, 0, 0, 0.54);
+}
+
+.centerherostory-author {
+    font-size: 16px;
 }
 
 .centerherostory-preview-img {

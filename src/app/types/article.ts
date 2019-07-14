@@ -19,9 +19,31 @@ export interface IArticleRecord {
     articleDisplayTitle: string;
     articleDisplaySubtitle: string;
     articleFeatureImage: string;
+    articleUpdateTime: Date;
+    articleReadTime: number;
+    userFirstName: string;
+    userLastName: string;
+}
+
+export interface IArticleContent {
+    articleId: number;
+    paragraphNumber: number;
+    paragraphEmbedContent: string;
+}
+
+export interface IArticleCreateRequest {
+    articleAuthorId: number;
+    articleCollectionId: number;
+    articleTag: string;
+    articleDisplayTitle: string;
+    articleDisplaySubtitle: string;
+    articleFeatureImage: string;
+    articleUpdateTime: Date;
+    articleReadTime: number;
+    articleContent: IParagraph[];
 }
 
 export interface IParagraph {
     paragraphnum: number;
-    paragraphcontent: string;
+    paragraphembedcontent: string;
 }

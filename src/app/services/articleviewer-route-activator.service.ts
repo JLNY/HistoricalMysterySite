@@ -8,7 +8,7 @@ export class ArticleViewerRouteActivator {
     constructor(private articleService: ArticleService, private router: Router) {}
 
     canActivate(route: ActivatedRouteSnapshot) {
-        const articleExists = !!this.articleService.getStory(route.params.articleid);
+        const articleExists = !!this.articleService.getArticleRecord(route.params.articleid);
 
         if (!articleExists) {
             this.router.navigate(['/404']);

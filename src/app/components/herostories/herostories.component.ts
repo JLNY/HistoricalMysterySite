@@ -17,7 +17,7 @@ export class HerostoriesComponent implements OnInit {
   constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
-    this.articleService.getHeroStories().subscribe(
+    this.articleService.getHeroArticles().subscribe(
       articles => {
         this.heroArticles = articles
         this.leftherostory = articles[0];

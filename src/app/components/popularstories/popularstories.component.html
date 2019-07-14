@@ -6,9 +6,9 @@
         <div class="popularStories-number">0{{i+1}}</div>
         <div [routerLink]="['/article', i+1]" class="popularStories-info">
             <h2 class="popularStories-title">{{popularstory.articleDisplayTitle}}</h2>
-            <!-- <div class="popularStories-author">{{popularstory.articleauthor}}</div>
-            <time class="popularStories-date">{{popularstory.articledate | date:'mediumDate'}}</time>
-            <span class="popularStories-readduration">{{popularstory.articlereadduration}}</span> -->
+            <div class="popularStories-author">{{popularstory.userFirstName}} {{popularstory.userLastName}}</div>
+            <time class="popularStories-date">{{popularstory.articleUpdateTime | date:'mediumDate'}}</time>
+            <span class="popularStories-readduration">{{popularstory.articleReadTime}}</span>
         </div>
     </div>
 </div>
