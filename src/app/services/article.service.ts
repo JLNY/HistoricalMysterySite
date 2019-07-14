@@ -1,16 +1,23 @@
 import {Injectable, EventEmitter} from '@angular/core';
-import { IArticle } from '../types/article';
-import { Subject } from 'rxjs';
+import { IArticle, IArticleRecord } from '../types/article';
+import { Subject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class ArticleService {
 
     articles: IArticle[] = Articles.slice(0)
+    baseUrl = environment.articleServiceUrl
+    /**
+     *
+     */
+    constructor(private http: HttpClient) {
+    }
 
-    getHeroStories(): IArticle[] {
-      return this.articles.sort((a, b) => {
-        return a.articleclapnum > b.articleclapnum ? -1 : a.articleclapnum < b.articleclapnum ? 1 : 0;
-       }).slice(0, 5);
+    getHeroStories(): Observable<IArticleRecord[]> {
+      let heroArticleUrl = this.baseUrl + '/api/articles/heroArticles'
+      return this.http.get<IArticleRecord[]>(heroArticleUrl)
     }
 
     getStory(articleid: number): IArticle {
@@ -38,6 +45,8 @@ export class ArticleService {
 
     }
 }
+
+
 
 const Articles: IArticle[] = [
     {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from 'src/app/services/article.service';
-import { IArticle } from 'src/app/types/article';
+import { IArticle, IArticleRecord } from 'src/app/types/article';
 
 @Component({
   selector: 'hm-herostories',
@@ -9,17 +9,22 @@ import { IArticle } from 'src/app/types/article';
 })
 export class HerostoriesComponent implements OnInit {
 
-  leftherostory: IArticle;
-  midherostory: IArticle[];
-  rightherostory: IArticle;
+  heroArticles: IArticleRecord[];
+  leftherostory: IArticleRecord;
+  midherostory: IArticleRecord[];
+  rightherostory: IArticleRecord;
 
   constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
-    const heroArticles = this.articleService.getHeroStories();
-    this.leftherostory = heroArticles[0];
-    this.midherostory = heroArticles.slice(1, 4);
-    this.rightherostory = heroArticles[4];
+    this.articleService.getHeroStories().subscribe(
+      articles => {
+        this.heroArticles = articles
+        this.leftherostory = articles[0];
+        this.midherostory = articles.slice(1, 4);
+        this.rightherostory = articles[4];
+      }
+    );
   }
 
 }

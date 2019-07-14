@@ -12,6 +12,15 @@ export interface IArticle {
     articleclapnum: number;
 }
 
+export interface IArticleRecord {
+    articleId: number;
+    articleTag: string;
+    articleCollectionId: number;
+    articleDisplayTitle: string;
+    articleDisplaySubtitle: string;
+    articleFeatureImage: string;
+}
+
 export interface IParagraph {
     paragraphnum: number;
     paragraphcontent: string;
