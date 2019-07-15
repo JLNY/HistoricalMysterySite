@@ -51,6 +51,10 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  isLoggedIn(){
+    this.authService.isAuthenticated()
+  }
+
   logout(){
     this.authService.logOutUser();
     this.router.navigate(['dashboard'])

@@ -8,6 +8,10 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  userName;
+  password;
+  mouseoverRegister;
+  registerInvalid;
 
   constructor(private router: Router, private authService: AuthService) { }
 
