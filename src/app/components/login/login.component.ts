@@ -23,6 +23,10 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['dashboard']);
   }
 
+  register() {
+    this.router.navigate(['user', 'register'])
+  }
+
   cancel() {
     this.router.navigate(['dashboard']);
   }

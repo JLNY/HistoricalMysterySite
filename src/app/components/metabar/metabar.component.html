@@ -1,15 +1,16 @@
 <div class="container metabar">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <a [routerLink]="['dashboard']">
                 <span>
                     <img class="metabar-logo-img" src="../../assets/img/icon.jpg">
                 </span>
             </a>
         </div>
-        <div class="col-sm-6 d-flex flex-row-reverse metabar-right align-items-center">
+        <div class="col-sm-8 d-flex flex-row-reverse metabar-right align-items-center">
             <div class="metabar-login">
-                <a *ngIf="!isLoggedIn()" [routerLink]="['user/login']">Login</a>
+                <a *ngIf="!isLoggedIn()" class="login" [routerLink]="['user/login']">Log In</a>
+                <a *ngIf="!isLoggedIn()" class="signup" [routerLink]="['user/register']">Sign Up</a>
                 <a *ngIf="isLoggedIn()" [routerLink]="['user/profile']">Welcome
                     {{authService.currentUser.firstName}}</a>
             </div>

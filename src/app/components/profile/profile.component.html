@@ -1,4 +1,4 @@
-<div class="user-profile-board">
+<div *ngIf="authService.isAuthenticated()" class="user-profile-board">
     <h1>Edit Your Profile </h1>
     <hr>
     <div class="col-md-4">
@@ -18,5 +18,6 @@
             <button type="submit" class="btn btn-primary">Save</button>
             <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
         </form>
+        <button type="button" class="btn btn-secondary logoutbutton" (click)="logout()">LogOut</button>
     </div>
 </div>

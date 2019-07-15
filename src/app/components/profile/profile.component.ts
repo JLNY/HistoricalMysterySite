@@ -31,6 +31,9 @@ export class ProfileComponent implements OnInit {
       firstName: this.firstName,
       lastName: this.lastName
     });
+    if (!this.authService.isAuthenticated()){
+      this.router.navigate(['dashboard'])
+    }
   }
 
   validateFirstName() {
@@ -46,6 +49,11 @@ export class ProfileComponent implements OnInit {
       this.authService.updateCurrentUser(formValues.firstName, formValues.lastName);
       this.router.navigate(['dashboard']);
     }
+  }
+
+  logout(){
+    this.authService.logOutUser();
+    this.router.navigate(['dashboard'])
   }
 
   cancel() {

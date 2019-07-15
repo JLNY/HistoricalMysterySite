@@ -1,26 +1,26 @@
-<div class="user-login-board">
-    <h1>Login</h1>
+<div class="user-register-board">
+    <h1>Register</h1>
     <hr>
     <div class="col-md-6">
-        <form autocomplete="off" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" novalidate>
+        <form autocomplete="off" #registerForm="ngForm" (ngSubmit)="register(registerForm.value)" novalidate>
             <div class="form-group">
                 <label for="userName">User Name:</label>
-                <em *ngIf="loginForm.controls.userName?.invalid && (loginForm.controls.userName?.touched || mouseoverLogin)">Required</em>
+                <em *ngIf="registerForm.controls.userName?.invalid && (registerForm.controls.userName?.touched || mouseoverLogin)">Required</em>
                 <input (ngModel)="userName" name="userName" required id="userName" type="text" class="form-control" placeholder="User Name..." />
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <em *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password?.touched || mouseoverLogin)">Required</em>
+                <em *ngIf="registerForm.controls.password?.invalid && (registerForm.controls.password?.touched || mouseoverLogin)">Required</em>
                 <input (ngModel)="password" name="password" required id="password" type="password" class="form-control" placeholder="Password..." />
             </div>
 
             <span (mouseenter)="mouseoverLogin=true" (mouseleave)="mouseoverLogin=false">
-                    <button type="submit" class="btn btn-primary">Login</button>
-            </span>
-            <button type="submit" class="btn btn-default" (click)="register()">Register</button>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                </span>
             <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
         </form>
         <br>
+        <a class="movetologin" (click)="login()">already have account? Login</a>
         <div *ngIf="loginInvalid" class="alert alert-danger">Invalid Login Info</div>
     </div>
 </div>
