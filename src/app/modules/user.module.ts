@@ -6,6 +6,7 @@ import { userRoutes } from '../routings/user-routes';
 import { ProfileComponent } from '../components/profile/profile.component';
 import { LoginComponent } from '../components/login/login.component';
 import { RegisterComponent } from '../components/register/register.component';
+import { AuthCallbackComponent } from '../components/auth-callback/auth-callback.component';
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import { RegisterComponent } from '../components/register/register.component';
     declarations: [
         ProfileComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        AuthCallbackComponent
     ],
     providers: [
 
