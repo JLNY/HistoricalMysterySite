@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { IArticle } from '../../types/article';
 import { ArticleService } from '../../services/article.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'hm-metabar',
@@ -11,7 +12,7 @@ import { ArticleService } from '../../services/article.service';
 export class MetabarComponent implements OnInit {
   searchTerm = '';
   foundArticles: IArticle[];
-  constructor(private authService: AuthService, private articleService: ArticleService) { }
+  constructor(private authService: AuthService, private articleService: ArticleService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -23,6 +24,15 @@ export class MetabarComponent implements OnInit {
         console.log(articles);
       }
     );
+  }
+
+  login(){
+    this.authService.loginIdentity();
+  }
+
+  logout(){
+    this.authService.logOutUser();
+    this.router.navigate(['dashboard']);
   }
 
   isLoggedIn(){
