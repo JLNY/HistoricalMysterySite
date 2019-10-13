@@ -30,13 +30,13 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  validateFirstName() {
-    return this.firstName.valid || this.firstName.untouched;
-  }
+  // validateFirstName() {
+  //   return this.firstName.valid || this.firstName.untouched;
+  // }
 
-  validateLastName() {
-    return this.lastName.valid || this.lastName.untouched;
-  }
+  // validateLastName() {
+  //   return this.lastName.valid || this.lastName.untouched;
+  // }
 
   saveProfile(formValues) {
     if (this.profileForm.valid) {

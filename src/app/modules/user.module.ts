@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { userRoutes } from '../routings/user-routes';
 import { ProfileComponent } from '../components/profile/profile.component';
 import { LoginComponent } from '../components/login/login.component';
-import { RegisterComponent } from '../components/register/register.component';
 import { AuthCallbackComponent } from '../components/auth-callback/auth-callback.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { AuthCallbackComponent } from '../components/auth-callback/auth-callback
     declarations: [
         ProfileComponent,
         LoginComponent,
-        RegisterComponent,
         AuthCallbackComponent
     ],
     providers: [

@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+
+  historicalmysterysite:
+    container_name: historicalmysterysite
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '4201:4200'
+      - '49153:49153'
