@@ -14,9 +14,8 @@ export class PopularstoriesComponent implements OnInit {
   constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
-    this.articleService.getHeroStories().subscribe(
+    this.articleService.getHeroArticles().subscribe(
       articles => {
-        console.log(articles)
         this.popularStories = articles
       }
     );

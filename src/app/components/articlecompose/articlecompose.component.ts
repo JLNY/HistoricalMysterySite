@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as BalloonBlockEditor from '@ckeditor/ckeditor5-build-balloon-block';
 import { AuthService } from 'src/app/services/auth.service';
-import { IArticle } from 'src/app/types/article';
+import { IArticle, IArticleCreateRequest } from 'src/app/types/article';
 import { ArticleService } from 'src/app/services/article.service';
 
 @Component({
@@ -14,6 +14,8 @@ export class ArticlecomposeComponent implements OnInit {
 
   TitleEditor = BalloonBlockEditor;
   BodyEditor = BalloonBlockEditor;
+
+  articleId: number;
 
   titleEditorModel = {
     editorData: '<h2 style="color: blue">Article Title<h2>',
@@ -42,26 +44,32 @@ export class ArticlecomposeComponent implements OnInit {
   }
 
   saveArticle() {
-    var article: IArticle = {
-      articleid: 10,
-      articletag: 'Employment',
-      articletitle: this.titleEditorModel.editorData.replace('<h2>', '').replace('</h2>', ''),
-      articlepreviewimg: 'https://cdn-images-1.medium.com/focal/416/151/44/28/0*SV8mG0zMYdREioMg',
-      articlefeatureimg: 'https://cdn-images-1.medium.com/max/1600/0*SV8mG0zMYdREioMg',
-      articleabstract: 'Abstract',
-      articleauthor: this.auth.currentUser.firstName,
-      articledate: new Date(),
-      articlereadduration: 5,
-      articlebody: [
+    var articleRequest: IArticleCreateRequest = {
+      articleAuthorId: this.auth.currentUser.userId,
+      articleCollectionId: 1,
+      articleTag: 'Employment',
+      articleDisplayTitle: new DOMParser().parseFromString(this.titleEditorModel.editorData, 'text/html').firstElementChild.children[1].firstElementChild.innerHTML,
+      articleDisplaySubtitle: 'Abstract',
+      articleFeatureImage: 'https://cdn-images-1.medium.com/max/1600/0*SV8mG0zMYdREioMg',
+      articleUpdateTime: new Date(),
+      articleReadTime: 7,
+      articleContent: [
         {
           paragraphnum: 1,
-          paragraphcontent: this.bodyEditorModel.editorData
+          paragraphembedcontent: this.bodyEditorModel.editorData
         }
-      ],
-      articleclapnum: 100,
+      ]
     }
-    this.articleService.addArticle(article);
+    this.articleService.addArticle(articleRequest).subscribe(
+      articleId => {
+        console.log(articleRequest)
+        console.log(articleId)
+        this.articleId = articleId
+        this.router.navigate(['article', articleId])
+      }
+    );
     this.isDirty = false;
+
   }
 
   isLoggedIn(): boolean{

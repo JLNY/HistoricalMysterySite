@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input, OnChanges  } from '@angular/core';
 import { ArticleService } from 'src/app/services/article.service';
-import { IArticle } from 'src/app/types/article';
+import { IArticle, IArticleRecord, IArticleContent } from 'src/app/types/article';
 import { Params } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ActivityService } from 'src/app/services/activity.service';
@@ -13,28 +13,42 @@ import { ActivityService } from 'src/app/services/activity.service';
 })
 export class ArticlecontentviewerComponent implements OnInit, OnChanges {
   @Input() articleid: number;
-  article: IArticle;
+  article: IArticleRecord;
+  content: IArticleContent[];
 
   constructor(private articleservice: ArticleService,
               private auth: AuthService,
               private activityService: ActivityService) { }
 
   ngOnInit() {
-    this.article = this.articleservice.getStory(this.articleid);
+    this.articleservice.getArticleRecord(this.articleid).subscribe(
+      article => {
+        this.article = article
+      }
+    );
+    this.articleservice.getArticleContent(this.articleid).subscribe(
+      content => {
+        this.content = content
+      }
+    )
   }
 
   ngOnChanges() {
-    this.article = this.articleservice.getStory(this.articleid);
+    this.articleservice.getArticleRecord(this.articleid).subscribe(
+      article => {
+        this.article = article
+      }
+    );
   }
 
   toggleClap(articleid: number) {
-    if (this.userHasClapped(articleid)) {
-      this.activityService.unClap(articleid, this.auth.currentUser.userName);
-      this.articleservice.getStory(articleid).articleclapnum -= 1;
-    } else {
-      this.activityService.clap(articleid, this.auth.currentUser.userName);
-      this.articleservice.getStory(articleid).articleclapnum += 1;
-    }
+    // if (this.userHasClapped(articleid)) {
+    //   this.activityService.unClap(articleid, this.auth.currentUser.userName);
+    //   this.articleservice.getStory(articleid).articleclapnum -= 1;
+    // } else {
+    //   this.activityService.clap(articleid, this.auth.currentUser.userName);
+    //   this.articleservice.getStory(articleid).articleclapnum += 1;
+    // }
   }
 
   userHasClapped(articleid: number) {

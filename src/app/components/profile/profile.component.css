@@ -5,6 +5,11 @@
     margin: 0 auto;
 }
 
+.logoutbutton {
+    width: inherit;
+    margin: 10px 0 10px 0;
+}
+
 em {
     float: right;
     color: red;

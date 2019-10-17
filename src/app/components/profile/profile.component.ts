@@ -10,42 +10,48 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   profileForm: FormGroup;
-  firstName: FormControl;
-  lastName: FormControl;
+  userName: FormControl;
 
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-    this.firstName = new FormControl(
-      this.authService.currentUser.firstName,
+    this.userName = new FormControl(
+      this.authService.user.profile["preferred_name"],
       [
         Validators.required,
         Validators.pattern('[a-zA-Z].*')
       ]
     );
-    this.lastName = new FormControl(
-      this.authService.currentUser.lastName,
-      Validators.required
-    );
     this.profileForm = new FormGroup({
-      firstName: this.firstName,
-      lastName: this.lastName
+      userName: this.userName,
     });
+    if (!this.authService.isAuthenticated()){
+      this.router.navigate(['dashboard'])
+    }
   }
 
-  validateFirstName() {
-    return this.firstName.valid || this.firstName.untouched;
-  }
+  // validateFirstName() {
+  //   return this.firstName.valid || this.firstName.untouched;
+  // }
 
-  validateLastName() {
-    return this.lastName.valid || this.lastName.untouched;
-  }
+  // validateLastName() {
+  //   return this.lastName.valid || this.lastName.untouched;
+  // }
 
   saveProfile(formValues) {
     if (this.profileForm.valid) {
       this.authService.updateCurrentUser(formValues.firstName, formValues.lastName);
       this.router.navigate(['dashboard']);
     }
+  }
+
+  isLoggedIn(){
+    this.authService.isAuthenticated()
+  }
+
+  logout(){
+    this.authService.logOutUser();
+    this.router.navigate(['dashboard'])
   }
 
   cancel() {

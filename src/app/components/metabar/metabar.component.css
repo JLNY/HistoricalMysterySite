@@ -42,6 +42,7 @@
     position: relative;
     bottom: 50%;
     cursor: pointer;
+    padding: 0 5px 0 5px;
 }
 
 .metabar-newarticle {

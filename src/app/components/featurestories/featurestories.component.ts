@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from 'src/app/services/article.service';
+import { IArticleRecord } from 'src/app/types/article';
 
 @Component({
   selector: 'hm-featurestories',
@@ -7,11 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeaturestoriesComponent implements OnInit {
 
-  featurestories = FeatureStories;
+  //featurearticls: IArticleRecord[] = FeatureStories;
 
-  constructor() { }
+  featureArticles: IArticleRecord[]
+  constructor(private articleService: ArticleService) { }
 
   ngOnInit() {
+    this.articleService.getFeatureArticles().subscribe(
+      articles => {
+        console.log(articles)
+        this.featureArticles = articles
+      }
+    )
   }
 
 }

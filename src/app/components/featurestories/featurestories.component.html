@@ -1,15 +1,15 @@
 <div class="container">
-    <div class="row featurestory" *ngFor="let featurestory of featurestories">
+    <div class="row featurestory" *ngFor="let featurearticle of featureArticles">
         <div class="col-sm-9">
-            <span class="tag">{{featurestory.tag}}</span>
-            <h2 class="title">{{featurestory.title}}</h2>
-            <div class="abstract">{{featurestory.abstract}}</div>
-            <div class="author">{{featurestory.author}}</div>
-            <time class="date">{{featurestory.date | date:'mediumDate'}}</time>
-            <span class="readduration">{{featurestory.readduration}}</span>
+            <span class="tag">{{featurearticle.tag}}</span>
+            <h2 class="title">{{featurearticle.articleDisplayTitle}}</h2>
+            <div class="abstract">{{featurearticle.articleDisplaySubtitle}}</div>
+            <div class="author">{{featurearticle.userFirstName}} {{featurearticle.userLastName}}</div>
+            <time class="date">{{featurearticle.articleUpdateTime | date:'mediumDate'}}</time>
+            <span class="readduration">{{featurearticle.articleReadTime}}</span>
         </div>
         <div class="col-sm">
-            <a href="/" class="featurestory-preview-img" [style.background]="'url(' + featurestory.previewimg +')'">
+            <a href="/" class="featurestory-preview-img" [style.background]="'url(' + featurearticle.articleFeatureImage +')'">
                 <!-- <img src="https://cdn-images-1.medium.com/max/800/0*syfFJWLOzLoNRUbF."> -->
             </a>
         </div>

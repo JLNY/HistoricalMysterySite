@@ -5,10 +5,10 @@
                 <div class="leftherostory-preview-img" [style.background]="'url(' + leftherostory.articleFeatureImage +')'"></div>
                 <h2 class="leftherostory-title">{{leftherostory.articleDisplayTitle}}</h2>
                 <div class="leftherostory-abstract">{{leftherostory.articleDisplaySubtitle}}</div>
-                <!-- <div class="leftherostory-author">{{leftherostory.articleauthor}}</div>
-                <time class="leftherostory-date">{{leftherostory.articledate | date:'mediumDate'}}</time>
+                <div class="leftherostory-author">{{leftherostory.userFirstName}} {{leftherostory.userLastName}}</div>
+                <time class="leftherostory-date">{{leftherostory.articleUpdateTime | date:'mediumDate'}}</time>
                 <span> . </span>
-                <span class="leftherostory-readduration">{{leftherostory.articlereadduration}}</span> -->
+                <span class="leftherostory-readduration">{{leftherostory.articleReadTime}} Minutes Read</span>
             </div>
         </div>
         <div *ngIf="midherostory" class="col-sm-4">
@@ -16,10 +16,10 @@
                 <div [routerLink]="['/article', centerherostory.articleId]" class="row centerherostory-row">
                     <div class="col-sm-9">
                         <h2 class="centerherostory-title">{{centerherostory.articleDisplayTitle}}</h2>
-                        <!-- <div class="centerherostory-author">{{centerherostory.articleauthor}}</div>
-                        <time class="centerherostory-date">{{centerherostory.articledate | date:'mediumDate'}}</time>
+                        <div class="centerherostory-author">{{centerherostory.userFirstName}} {{centerherostory.userLastName}}</div>
+                        <time class="centerherostory-date">{{centerherostory.articleUpdateTime | date:'mediumDate'}}</time>
                         <span> . </span>
-                        <span class="centerherostory-readduration">{{centerherostory.articlereadduration}}</span> -->
+                        <span class="centerherostory-readduration">{{centerherostory.articleReadTime}} Minutes Read</span>
                     </div>
                     <div class="col-sm-3">
                         <div class="centerherostory-preview-img" [style.background]="'url(' + centerherostory.articleFeatureImage +')'"></div>
@@ -32,10 +32,10 @@
                 <div class="rightherostory-preview-img" [style.background]="'url(' + rightherostory.articleFeatureImage +')'"></div>
                 <h2 class="rightherostory-title">{{rightherostory.articleDisplayTitle}}</h2>
                 <div class="rightherostory-abstract">{{rightherostory.articleDisplaySubtitle}}</div>
-                <!-- <div class="rightherostory-author">{{rightherostory.articleauthor}}</div>
-                <time class="rightherostory-date">{{rightherostory.articledate | date:'mediumDate'}}</time>
+                <div class="rightherostory-author">{{rightherostory.userFirstName}} {{rightherostory.userLastName}}</div>
+                <time class="rightherostory-date">{{rightherostory.articleUpdateTime | date:'mediumDate'}}</time>
                 <span> . </span>
-                <span class="rightherostory-readduration">{{rightherostory.articlereadduration}}</span> -->
+                <span class="rightherostory-readduration">{{rightherostory.articleReadTime}} Minutes Read</span>
             </div>
         </div>
     </div>
