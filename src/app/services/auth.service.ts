@@ -66,10 +66,10 @@ export class AuthService {
 
 export function getClientSettings(): UserManagerSettings {
     return {
-        authority: 'http://historicalmysteryidp.azurewebsites.net',
+        authority: 'https://historicalmysteryidp.azurewebsites.net',
         client_id: 'hm-angular',
-        redirect_uri: 'http://historicalmysteryidp.azurewebsites.net/user/auth-callback',
-        post_logout_redirect_uri: 'http://historicalmysteryidp.azurewebsites.net',
+        redirect_uri: 'https://historicalmysteryidp.azurewebsites.net/user/auth-callback',
+        post_logout_redirect_uri: 'https://historicalmysteryidp.azurewebsites.net',
         response_type:"id_token token",
         scope:"openid profile api1"
     };
